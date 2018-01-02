@@ -1,0 +1,50 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>uleash.test</groupId>
+	<artifactId>com.akravets.unleash</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>eclipse-plugin</packaging>
+	<properties>
+		<tycho.version>0.22.0</tycho.version>
+	</properties>
+	
+	<scm>
+		<connection>scm:git:https://github.com/akravets/unleash.git</connection>
+		<developerConnection>scm:git:https://github.com/akravets/unleash.git</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
+
+	<repositories>
+		<!-- add Mars repository to resolve dependencies -->
+		<repository>
+			<id>Mars</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/releases/mars/</url>
+		</repository>
+	</repositories>
+
+	<build>
+		<plugins>
+			<plugin>
+				<!-- enable tycho build extension -->
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho.version}</version>
+				<extensions>true</extensions>
+			</plugin>
+			<plugin>
+				<groupId>com.itemis.maven.plugins</groupId>
+				<artifactId>unleash-maven-plugin</artifactId>
+				<version>2.7.4</version>
+				<dependencies>
+					<dependency>
+						<groupId>com.itemis.maven.plugins</groupId>
+						<artifactId>unleash-scm-provider-git</artifactId>
+						<version>2.1.0</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+	</build>
+</project>
