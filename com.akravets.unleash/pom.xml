@@ -8,7 +8,7 @@
 	<properties>
 		<tycho.version>0.22.0</tycho.version>
 	</properties>
-	
+
 	<scm>
 		<connection>scm:git:https://github.com/akravets/unleash.git</connection>
 		<developerConnection>scm:git:https://github.com/akravets/unleash.git</developerConnection>
